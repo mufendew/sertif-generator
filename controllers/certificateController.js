@@ -1,7 +1,7 @@
-const {Cast,Movie} = require("../models")
-const ubahUmur = require("../helper/ubahUmur")
+const {Event, Participant, ParticipantEvent} = require("../models")
 
-class sertifikatController{
+
+class certificateController{
     static show(req, res){
         
     }
@@ -21,8 +21,8 @@ class sertifikatController{
         
     }
     static showMovies(req, res){
-        
+
     }
 }
 
-module.exports = castController
+module.exports = certificateController
