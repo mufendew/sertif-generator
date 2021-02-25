@@ -1,0 +1,46 @@
+<%- include('../fragment/head',{title: "Add student"}); %>
+
+<body>
+    <%- include('../fragment/nav'); %>
+    <h1 style="text-align:center;">Movie List</h1>
+    <div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center" style="margin-bottom:20px">
+            <a class="btn btn-outline-success" style="margin:10px 10px;" href='/movie/add'>Tambah Pelem</a>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Year Release</th>
+                <th>Genre</th>
+                <th>Production</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(e=>{ %>
+                    <tr>
+                      <th><%= e.id %> </th>
+                      <td><%= e.name %> </td>
+                      <td><%= e.released_year %> </td>
+                      <td><%= e.genre %> </td>
+                      <td><%= e.ProductionHouse?.name_prodHouse || "Unknown" %> </td>
+                      <td><a href="/movie/edit/<%= e.id %>">Edit</a> | <a href="/movie/delete/<%= e.id %>">Delete</a> | <a href="/movie/addcast/<%= e.id %>">Add Cast</a></td>
+                    </tr>
+                    <% }) %>
+      
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    </di>
+</body>
+
+</html>

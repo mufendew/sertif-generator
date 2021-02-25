@@ -1,0 +1,46 @@
+<%- include('../fragment/head',{title: "Add student"}); %>
+
+<body>
+    <%- include('../fragment/nav'); %>
+    <h1 style="text-align:center;">Artis List</h1>
+    <div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center" style="margin-bottom:20px">
+            <a class="btn btn-outline-success" style="margin:10px 10px;" href='/cast/add'>Tambah Artis Papan Bawah</a>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Hp</th>
+                <th>Tahun Lahir</th>
+                <th>Kelamin</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(e=>{ %>
+                    <tr>
+                      <th><%= e.id %> </th>
+                      <td><%= e.getFullName() %> </td>
+                      <td><%= e.phone_number %> </td>
+                      <td><%= e.birth_year %> </td>
+                      <td><%= e.gender %> </td>
+                      <td><a href="/cast/edit/<%= e.id %>">Edit</a> | <a href="/cast/delete/<%= e.id %>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a> | <a href="/cast/showmovies/<%= e.id %>">pelem</a></td>
+                    </tr>
+                    <% }) %>
+      
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    </di>
+</body>
+
+</html>
