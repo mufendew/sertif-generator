@@ -5,6 +5,7 @@ const routers = require('./routes')
 const session = require('express-session')
 app.use(express.urlencoded({ extended: true }))
 
+app.set("view engine", "ejs");
 
 app.set("view engine","ejs")
 
@@ -16,7 +17,8 @@ app.use(session({
 }))
 app.use(routers)
 
+app.use(routers);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+    console.log(`Example app listening at http://localhost:${port}`);
+});
