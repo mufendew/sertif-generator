@@ -5,7 +5,7 @@ class loginController{
     static loginProcess(req, res){
         if (req.body.username === "Fawwaz" || req.body.password === "1234") {
             req.session.isLogin = true;
-            res.redirect('/')
+            res.redirect('/event')
         }else{
             res.redirect('/login?message=error')
         }

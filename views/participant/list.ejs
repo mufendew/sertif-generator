@@ -2,35 +2,36 @@
 
 <body>
     <%- include('../fragment/nav'); %>
-    <h1 style="text-align:center;">List Pelemnya <%= data.getFullName() %> %></h1>
+    <h1 style="text-align:center;">Participant</h1>
     <div>
     
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="text-center" style="margin-bottom:20px">
-            <a class="btn btn-outline-success" style="margin:10px 10px;" href='/cast'>back to actor</a>
+            <a class="btn btn-outline-success" style="margin:10px 10px;" href='/Participant/add'>Tambah Peserta</a>
           </div>
           <table class="table">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Movie</th>
-                <th>Release Year</th>
-                <th>Age When Movie Release</th>
+                <th>No</th>
+                <th>Name</th>
+                <th>Company</th>
                 <th>Role</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-                <% data.Movies.forEach(e=>{ %>
+                <% data.forEach(e=>{ %>
                     <tr>
                       <th><%= e.id %> </th>
                       <td><%= e.name %> </td>
-                      <td><%= e.released_year %> </td>
-                      <td><%= ubahUmur(data.birth_year,e.released_year) %> </td>
-                      <td><%= e.MovieCast.role %> </td>
+                      <td><%= e.company %> </td>
+                      <td><%= e.role %> </td>
+                      <td><a href="/participant/edit/<%= e.id %>">edit</a> </td>
                     </tr>
                     <% }) %>
+      
             </tbody>
           </table>
         </div>

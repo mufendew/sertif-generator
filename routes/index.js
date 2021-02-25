@@ -1,9 +1,12 @@
 const router = require('express').Router();
-// const event = require('./RouteEvent');
+const event = require('./RouteEvent');
 const Generate = require('../controllers/generateController')
 const Login = require('../controllers/loginController')
+const Participant = require('../controllers/participantController')
 
-// router.use('/event', event)
+router.use('/', event)
+
+
 
 router.get('/generate',Generate.show)
 router.post('/generate',Generate.generate)

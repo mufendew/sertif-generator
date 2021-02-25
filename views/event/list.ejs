@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-center" style="margin-bottom:20px">
-            <a class="btn btn-outline-success" style="margin:10px 10px;" href='/movie/add'>Tambah Pelem</a>
+            <a class="btn btn-outline-success" style="margin:10px 10px;" href='/event/add'>Tambah Event</a>
           </div>
           <table class="table">
             <thead>
@@ -18,7 +18,6 @@
                 <th>Name</th>
                 <th>Event Start</th>
                 <th>Event End</th>
-                <th>Certificate Template</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -27,10 +26,9 @@
                     <tr>
                       <th><%= e.id %> </th>
                       <td><%= e.name %> </td>
-                      <td><%= e.released_year %> </td>
-                      <td><%= e.genre %> </td>
-                      <td><%= e.ProductionHouse?.name_prodHouse || "Unknown" %> </td>
-                      <td><a href="/movie/edit/<%= e.id %>">Edit</a> | <a href="/movie/delete/<%= e.id %>">Delete</a> | <a href="/movie/addcast/<%= e.id %>">Add Cast</a></td>
+                      <td><%= e.convert(e.awal) %> </td>
+                      <td><%= e.convert(e.akhir) %> </td>
+                      <td><a href="/event/peserta/<%= e.id %>">Lihat Peserta</a> | <a href="/event/delete/<%= e.id %>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a> </td>
                     </tr>
                     <% }) %>
       

@@ -1,4 +1,6 @@
 'use strict';
+const romawi = require('../helper/romawi')
+const nol = require('../helper/ubahnolnol')
 const {
   Model
 } = require('sequelize');
@@ -29,5 +31,10 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'ParticipantEvent',
   });
+
+  ParticipantEvent.beforeCreate((data,options) => {
+    console.log(data);
+    data.certificate_number = `No. ${nol(data.certificate_number)}/Migas/${romawi(new Date().getMonth()+1)}/${new Date().getFullYear()}`
+  })
   return ParticipantEvent;
 };

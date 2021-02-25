@@ -1,0 +1,76 @@
+<%- include('../fragment/head',{title: "Event"}); %>
+<body>
+    <%- include('../fragment/nav'); %>
+    <div class="container">
+        <div class="row justify-content-center" style="margin-top:25px;margin-bottom: 25px;">
+            <div class="col-sm-6">
+                <h2 style="text-align:center;"><%= data.name %></h2>
+                <h6 style="text-align:center;"><a href="/event"> List Event</a></h6>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label>name</label>
+                        <select name="name" class="form-control">
+                            <option value=""></option>
+                            <% orang.forEach(el =>{%>
+                                <option value="<%=el.id%>"><%=el.name%></option>
+                            <% })%>
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label>Sertif Valid from</label>
+                            <input type="date" name="validFrom" class="form-control" value="<%=data.convert(data.awal)%>">
+                        </div>
+                        <div class="form-group col-4">
+                            <label>Sertif Valid until</label>
+                            <input type="date" name="validUntil" class="form-control" value="<%=data.convert(data.akhir)%>">
+                        </div>
+                        <div class="form-group col-4">
+                            <label>Nomor Sertif</label>
+                            <input type="number" name="certificate_number" class="form-control" value="<%=lastRecord?.id+1 || 0%>">
+                        </div>
+                    </div>
+                    <input type="submit"></input>
+                </form>
+            </div>
+            <div class="col-sm-12">
+                <h2 style="text-align:center; margin-top: 50px;">List Peserta</h2>
+            </div>
+            <div class="col-sm-12">
+                <label for=""><b>Event <%= data.name %></b></label>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th width="50">ID</th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Certificate_Number</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% data.Participants.forEach(e=>{ %>
+                            <tr>
+                              <th><%= e.id %> </th>
+                              <td><%= e.name %> </td>
+                              <td><%= e.company %> </td>
+                              <td><%= e.role %> </td>
+                              <td><%= e.ParticipantEvent.certificate_number %> </td>
+                              <td><a href="event/peserta/<%=data.id%>/delete"></a></td>
+                            </tr>
+                            <% }) %>
+              
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

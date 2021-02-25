@@ -1,0 +1,35 @@
+<%- include('../fragment/head',{title: "Event"}); %>
+<body>
+    <%- include('../fragment/nav'); %>
+    <div class="container">
+        <div class="row justify-content-center" style="margin-top:25px;margin-bottom: 25px;">
+            <div class="col-sm-6">
+                <h2 style="text-align:center;">Add Pelem Layar Lebar</h2>
+                <h6 style="text-align:center;"><a href="/event"> List Event</a></h6>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <form action="" method="POST">
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Event Start</label>
+                        <input type="date" name="awal" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Event End</label>
+                        <input type="date" name="akhir" class="form-control">
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
