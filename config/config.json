@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "88342232",
+    "database": "project_akhir_p1",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "ubhorprcdsfoln",
+    "password": "b3b46987c9c7332f5044fea93212e77c3a2badabb5bf0cde3767fb254810920b",
+    "database": "d76i8bd5ddov7r",
+    "host": "ec2-18-207-95-219.compute-1.amazonaws.com",
+    "dialect": "postgres"
+  }
+}
