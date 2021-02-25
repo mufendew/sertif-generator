@@ -8,8 +8,8 @@ router.use('/', event)
 
 
 
-router.get('/generate',Generate.show)
-router.post('/generate',Generate.generate)
+router.get('/',Generate.show)
+router.post('/',Generate.generate)
 router.get('/login', Login.login)
 router.post('/login', Login.loginProcess)
 router.get('/logout', Login.logout)
