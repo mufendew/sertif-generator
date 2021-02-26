@@ -1,1 +1,1 @@
-# sertif-generator
+# Certificate Generator
